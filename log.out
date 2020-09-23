@@ -1,0 +1,3655 @@
+
+> cucumber@1.0.0 test C:\Users\docto\Desktop\cucumber-webdriverio
+> wdio wdio.conf.js
+
+
+Execution of 1 spec files started at 2020-09-19T22:47:21.830Z
+
+2020-09-19T22:47:21.877Z INFO @wdio/cli:launcher: Run onPrepare hook
+2020-09-19T22:47:23.866Z INFO @wdio/local-runner: Start worker 0-0 with arg: wdio.conf.js
+[0-0] 2020-09-19T22:47:24.332Z INFO @wdio/local-runner: Run worker command: run
+[0-0] RUNNING in chrome - C:\Users\docto\Desktop\cucumber-webdriverio\features\registro.feature
+[0-0] 2020-09-19T22:47:24.675Z INFO webdriverio: Initiate new session using the webdriver protocol
+[0-0] 2020-09-19T22:47:24.677Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session
+[0-0] 2020-09-19T22:47:24.677Z INFO webdriver: DATA {
+  capabilities: { alwaysMatch: { browserName: 'chrome' }, firstMatch: [ {} ] },
+  desiredCapabilities: { browserName: 'chrome' }
+}
+[0-0] 2020-09-19T22:47:28.200Z INFO webdriver: COMMAND navigateTo("https://losestudiantes.co/")
+[0-0] 2020-09-19T22:47:28.200Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/url
+[0-0] 2020-09-19T22:47:28.200Z INFO webdriver: DATA { url: 'https://losestudiantes.co/' }
+[0-0] 2020-09-19T22:47:31.119Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:31.119Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:31.119Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:31.132Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6d0ff3af-cb9c-4e8d-87ed-20a0d1e38d25'
+}
+[0-0] 2020-09-19T22:47:31.138Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:31.138Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:31.138Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': '6d0ff3af-cb9c-4e8d-87ed-20a0d1e38d25',
+      ELEMENT: '6d0ff3af-cb9c-4e8d-87ed-20a0d1e38d25'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:31.148Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:31.149Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:31.149Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:31.149Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:31.176Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6d0ff3af-cb9c-4e8d-87ed-20a0d1e38d25'
+}
+[0-0] 2020-09-19T22:47:31.178Z INFO webdriver: COMMAND elementClick("6d0ff3af-cb9c-4e8d-87ed-20a0d1e38d25")
+[0-0] 2020-09-19T22:47:31.178Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6d0ff3af-cb9c-4e8d-87ed-20a0d1e38d25/click
+[0-0] 2020-09-19T22:47:31.220Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:31.220Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:31.220Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:31.236Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'd3dd8ae3-9ac7-4a7b-997b-46d2b94ade71'
+}
+[0-0] 2020-09-19T22:47:31.240Z INFO webdriver: COMMAND findElements("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:31.240Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/elements
+[0-0] 2020-09-19T22:47:31.240Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:31.252Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'd3dd8ae3-9ac7-4a7b-997b-46d2b94ade71'
+  }
+]
+[0-0] 2020-09-19T22:47:31.255Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:31.255Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:31.255Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:31.264Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'd3dd8ae3-9ac7-4a7b-997b-46d2b94ade71'
+}
+[0-0] 2020-09-19T22:47:31.266Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:31.266Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:31.266Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': 'd3dd8ae3-9ac7-4a7b-997b-46d2b94ade71',
+      ELEMENT: 'd3dd8ae3-9ac7-4a7b-997b-46d2b94ade71'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:31.281Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:31.282Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:31.282Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:31.282Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:31.292Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'd3dd8ae3-9ac7-4a7b-997b-46d2b94ade71'
+}
+[0-0] 2020-09-19T22:47:31.294Z INFO webdriver: COMMAND elementClick("d3dd8ae3-9ac7-4a7b-997b-46d2b94ade71")
+[0-0] 2020-09-19T22:47:31.294Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/d3dd8ae3-9ac7-4a7b-997b-46d2b94ade71/click
+[0-0] 2020-09-19T22:47:31.481Z INFO webdriver: COMMAND findElement("css selector", ".cajaSignUp")
+[0-0] 2020-09-19T22:47:31.481Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:31.481Z INFO webdriver: DATA { using: 'css selector', value: '.cajaSignUp' }
+[0-0] 2020-09-19T22:47:31.497Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '8f58fdcb-f2ee-4c26-a292-643761695ebd'
+}
+[0-0] 2020-09-19T22:47:31.504Z INFO webdriver: COMMAND findElementFromElement("8f58fdcb-f2ee-4c26-a292-643761695ebd", "css selector", "input[name="nombre"]")
+[0-0] 2020-09-19T22:47:31.504Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8f58fdcb-f2ee-4c26-a292-643761695ebd/element
+[0-0] 2020-09-19T22:47:31.504Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="nombre"]' }
+[0-0] 2020-09-19T22:47:31.535Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'a0dedf4d-4cf8-405a-ae81-d0d82a678775'
+}
+[0-0] 2020-09-19T22:47:31.537Z INFO webdriver: COMMAND findElementFromElement("8f58fdcb-f2ee-4c26-a292-643761695ebd", "css selector", "input[name="apellido"]")
+[0-0] 2020-09-19T22:47:31.538Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8f58fdcb-f2ee-4c26-a292-643761695ebd/element
+[0-0] 2020-09-19T22:47:31.538Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="apellido"]' }
+[0-0] 2020-09-19T22:47:31.590Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '79ac2c18-a6c5-4ea9-9df1-a23b94af9e4a'
+}
+[0-0] 2020-09-19T22:47:31.592Z INFO webdriver: COMMAND findElementFromElement("8f58fdcb-f2ee-4c26-a292-643761695ebd", "css selector", "input[name="correo"]")
+[0-0] 2020-09-19T22:47:31.593Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8f58fdcb-f2ee-4c26-a292-643761695ebd/element
+[0-0] 2020-09-19T22:47:31.593Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="correo"]' }
+[0-0] 2020-09-19T22:47:31.606Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '4cf85ec1-a0fb-4b59-8219-fb4e339406cf'
+}
+[0-0] 2020-09-19T22:47:31.609Z INFO webdriver: COMMAND findElementFromElement("8f58fdcb-f2ee-4c26-a292-643761695ebd", "css selector", "select[name="idUniversidad"]")
+[0-0] 2020-09-19T22:47:31.609Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8f58fdcb-f2ee-4c26-a292-643761695ebd/element
+[0-0] 2020-09-19T22:47:31.609Z INFO webdriver: DATA { using: 'css selector', value: 'select[name="idUniversidad"]' }
+[0-0] 2020-09-19T22:47:31.632Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '4b3a79ad-88cf-4fc6-85b1-88a2bd9a79b9'
+}
+[0-0] 2020-09-19T22:47:31.633Z INFO webdriver: COMMAND findElementFromElement("8f58fdcb-f2ee-4c26-a292-643761695ebd", "css selector", "select[name="idPrograma"]")
+[0-0] 2020-09-19T22:47:31.633Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8f58fdcb-f2ee-4c26-a292-643761695ebd/element
+[0-0] 2020-09-19T22:47:31.634Z INFO webdriver: DATA { using: 'css selector', value: 'select[name="idPrograma"]' }
+[0-0] 2020-09-19T22:47:31.651Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '61f099d0-6e60-419e-b433-45e794a56643'
+}
+[0-0] 2020-09-19T22:47:31.653Z INFO webdriver: COMMAND findElementFromElement("8f58fdcb-f2ee-4c26-a292-643761695ebd", "css selector", "input[name="password"]")
+2020-09-19T22:47:31.654Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8f58fdcb-f2ee-4c26-a292-643761695ebd/element
+2020-09-19T22:47:31.654Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="password"]' }
+[0-0] 2020-09-19T22:47:31.689Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '73f00f6e-6552-4bb8-a1b5-8082f7db506f'
+}
+[0-0] 2020-09-19T22:47:31.693Z INFO webdriver: COMMAND findElementFromElement("8f58fdcb-f2ee-4c26-a292-643761695ebd", "css selector", "input[name="acepta"]")
+[0-0] 2020-09-19T22:47:31.693Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8f58fdcb-f2ee-4c26-a292-643761695ebd/element
+[0-0] 2020-09-19T22:47:31.693Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="acepta"]' }
+[0-0] 2020-09-19T22:47:31.714Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '115f115d-6d07-4168-bd86-b2ae7e8ebe44'
+}
+2020-09-19T22:47:31.715Z INFO webdriver: COMMAND elementClear("a0dedf4d-4cf8-405a-ae81-d0d82a678775")
+2020-09-19T22:47:31.715Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/a0dedf4d-4cf8-405a-ae81-d0d82a678775/clear
+[0-0] 2020-09-19T22:47:31.775Z INFO webdriver: COMMAND elementSendKeys("a0dedf4d-4cf8-405a-ae81-d0d82a678775", "asdf")
+[0-0] 2020-09-19T22:47:31.776Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/a0dedf4d-4cf8-405a-ae81-d0d82a678775/value
+2020-09-19T22:47:31.776Z INFO webdriver: DATA { text: 'asdf' }
+[0-0] 2020-09-19T22:47:31.861Z INFO webdriver: COMMAND elementClear("79ac2c18-a6c5-4ea9-9df1-a23b94af9e4a")
+[0-0] 2020-09-19T22:47:31.862Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/79ac2c18-a6c5-4ea9-9df1-a23b94af9e4a/clear
+[0-0] 2020-09-19T22:47:31.901Z INFO webdriver: COMMAND elementSendKeys("79ac2c18-a6c5-4ea9-9df1-a23b94af9e4a", "asdfasd")
+[0-0] 2020-09-19T22:47:31.901Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/79ac2c18-a6c5-4ea9-9df1-a23b94af9e4a/value
+2020-09-19T22:47:31.902Z INFO webdriver: DATA { text: 'asdfasd' }
+[0-0] 2020-09-19T22:47:31.998Z INFO webdriver: COMMAND elementClear("4cf85ec1-a0fb-4b59-8219-fb4e339406cf")
+[0-0] 2020-09-19T22:47:31.998Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/4cf85ec1-a0fb-4b59-8219-fb4e339406cf/clear
+[0-0] 2020-09-19T22:47:32.031Z INFO webdriver: COMMAND elementSendKeys("4cf85ec1-a0fb-4b59-8219-fb4e339406cf", "asdf@asdf1.com")
+[0-0] 2020-09-19T22:47:32.034Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/4cf85ec1-a0fb-4b59-8219-fb4e339406cf/value
+[0-0] 2020-09-19T22:47:32.034Z INFO webdriver: DATA { text: 'asdf@asdf1.com' }
+[0-0] 2020-09-19T22:47:32.182Z INFO webdriver: COMMAND findElementFromElement("4b3a79ad-88cf-4fc6-85b1-88a2bd9a79b9", "xpath", "./option[. = "Universidad de los Andes"]|./option[normalize-space(text()) = "Universidad de los Andes"]|./optgroup/option[. = "Universidad de los Andes"]|./optgroup/option[normalize-space(text()) = "Universidad de los Andes"]")
+[0-0] 2020-09-19T22:47:32.182Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/4b3a79ad-88cf-4fc6-85b1-88a2bd9a79b9/element
+[0-0] 2020-09-19T22:47:32.182Z INFO webdriver: DATA {
+  using: 'xpath',
+  value: './option[. = "Universidad de los Andes"]|./option[normalize-space(text()) = "Universidad de los Andes"]|./optgroup/option[. = "Universidad de los Andes"]|./optgroup/option[normalize-space(text()) = "Universidad de los Andes"]'
+}
+[0-0] 2020-09-19T22:47:32.211Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '598c477b-15f0-47fa-82f3-dcb9c4c87041'
+}
+[0-0] 2020-09-19T22:47:32.212Z INFO webdriver: COMMAND elementClick("598c477b-15f0-47fa-82f3-dcb9c4c87041")
+[0-0] 2020-09-19T22:47:32.212Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/598c477b-15f0-47fa-82f3-dcb9c4c87041/click
+[0-0] 2020-09-19T22:47:32.246Z INFO webdriver: COMMAND findElementFromElement("61f099d0-6e60-419e-b433-45e794a56643", "xpath", "./option[. = "Arte"]|./option[normalize-space(text()) = "Arte"]|./optgroup/option[. = "Arte"]|./optgroup/option[normalize-space(text()) = "Arte"]")
+[0-0] 2020-09-19T22:47:32.246Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/61f099d0-6e60-419e-b433-45e794a56643/element
+2020-09-19T22:47:32.246Z INFO webdriver: DATA {
+  using: 'xpath',
+  value: './option[. = "Arte"]|./option[normalize-space(text()) = "Arte"]|./optgroup/option[. = "Arte"]|./optgroup/option[normalize-space(text()) = "Arte"]'
+}
+[0-0] 2020-09-19T22:47:32.260Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '8cabf07b-4b8c-4b21-b573-6d607bc00aea'
+}
+[0-0] 2020-09-19T22:47:32.260Z INFO webdriver: COMMAND elementClick("8cabf07b-4b8c-4b21-b573-6d607bc00aea")
+[0-0] 2020-09-19T22:47:32.260Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8cabf07b-4b8c-4b21-b573-6d607bc00aea/click
+[0-0] 2020-09-19T22:47:32.292Z INFO webdriver: COMMAND elementClear("73f00f6e-6552-4bb8-a1b5-8082f7db506f")
+[0-0] 2020-09-19T22:47:32.292Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/73f00f6e-6552-4bb8-a1b5-8082f7db506f/clear
+[0-0] 2020-09-19T22:47:32.328Z INFO webdriver: COMMAND elementSendKeys("73f00f6e-6552-4bb8-a1b5-8082f7db506f", "asdfasdf")
+[0-0] 2020-09-19T22:47:32.328Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/73f00f6e-6552-4bb8-a1b5-8082f7db506f/value
+[0-0] 2020-09-19T22:47:32.328Z INFO webdriver: DATA { text: 'asdfasdf' }
+[0-0] 2020-09-19T22:47:32.395Z INFO webdriver: COMMAND elementClick("115f115d-6d07-4168-bd86-b2ae7e8ebe44")
+[0-0] 2020-09-19T22:47:32.395Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/115f115d-6d07-4168-bd86-b2ae7e8ebe44/click
+[0-0] 2020-09-19T22:47:32.446Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Registrarse"]")
+[0-0] 2020-09-19T22:47:32.446Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:32.446Z INFO webdriver: DATA {
+  using: 'xpath',
+  value: './/button[normalize-space() = "Registrarse"]'
+}
+[0-0] 2020-09-19T22:47:32.460Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '483eacb3-b9f6-427e-95dd-1e856f6285bc'
+}
+[0-0] 2020-09-19T22:47:32.461Z INFO webdriver: COMMAND elementClick("483eacb3-b9f6-427e-95dd-1e856f6285bc")
+[0-0] 2020-09-19T22:47:32.461Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/483eacb3-b9f6-427e-95dd-1e856f6285bc/click
+[0-0] Error in "Register into losestudiantes.co: Good register: Then I expect to see a successful message Registro exitoso!"
+Step "Then I expect to see a successful message Registro exitoso!" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.
+[0-0] 2020-09-19T22:47:32.502Z INFO webdriver: COMMAND navigateTo("https://losestudiantes.co/")
+[0-0] 2020-09-19T22:47:32.502Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/url
+2020-09-19T22:47:32.502Z INFO webdriver: DATA { url: 'https://losestudiantes.co/' }
+[0-0] 2020-09-19T22:47:32.886Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:32.887Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:32.887Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:32.897Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:32.899Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:32.899Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:32.899Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:32.909Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:32.911Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:32.912Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:32.912Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:32.921Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '067e3238-684f-4c56-adc0-122e2add1470'
+}
+[0-0] 2020-09-19T22:47:32.923Z INFO webdriver: COMMAND findElements("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:32.923Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/elements
+[0-0] 2020-09-19T22:47:32.923Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:32.931Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '067e3238-684f-4c56-adc0-122e2add1470'
+  }
+]
+[0-0] 2020-09-19T22:47:32.932Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:32.932Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:32.932Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:32.941Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '067e3238-684f-4c56-adc0-122e2add1470'
+}
+[0-0] 2020-09-19T22:47:32.943Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:32.943Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:32.943Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': '067e3238-684f-4c56-adc0-122e2add1470',
+      ELEMENT: '067e3238-684f-4c56-adc0-122e2add1470'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:32.950Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:32.951Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+2020-09-19T22:47:32.951Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:32.951Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:32.961Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '067e3238-684f-4c56-adc0-122e2add1470'
+}
+[0-0] 2020-09-19T22:47:32.964Z INFO webdriver: COMMAND elementClick("067e3238-684f-4c56-adc0-122e2add1470")
+[0-0] 2020-09-19T22:47:32.964Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/067e3238-684f-4c56-adc0-122e2add1470/click
+[0-0] 2020-09-19T22:47:33.033Z INFO webdriver: COMMAND findElement("css selector", ".cajaSignUp")
+[0-0] 2020-09-19T22:47:33.034Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:33.034Z INFO webdriver: DATA { using: 'css selector', value: '.cajaSignUp' }
+[0-0] 2020-09-19T22:47:33.043Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'f732bb25-7740-4228-9bec-5d693df1a206'
+}
+[0-0] 2020-09-19T22:47:33.044Z INFO webdriver: COMMAND findElementFromElement("f732bb25-7740-4228-9bec-5d693df1a206", "css selector", "input[name="nombre"]")
+[0-0] 2020-09-19T22:47:33.044Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f732bb25-7740-4228-9bec-5d693df1a206/element
+[0-0] 2020-09-19T22:47:33.044Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="nombre"]' }
+[0-0] 2020-09-19T22:47:33.057Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'fb8a23b1-b7d9-4ebd-9706-1c81d6cd0cda'
+}
+[0-0] 2020-09-19T22:47:33.058Z INFO webdriver: COMMAND findElementFromElement("f732bb25-7740-4228-9bec-5d693df1a206", "css selector", "input[name="apellido"]")
+[0-0] 2020-09-19T22:47:33.058Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f732bb25-7740-4228-9bec-5d693df1a206/element
+[0-0] 2020-09-19T22:47:33.059Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="apellido"]' }
+[0-0] 2020-09-19T22:47:33.076Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '08c3fa11-e301-43c3-95b2-d5c116751d32'
+}
+[0-0] 2020-09-19T22:47:33.077Z INFO webdriver: COMMAND findElementFromElement("f732bb25-7740-4228-9bec-5d693df1a206", "css selector", "input[name="correo"]")
+[0-0] 2020-09-19T22:47:33.077Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f732bb25-7740-4228-9bec-5d693df1a206/element
+[0-0] 2020-09-19T22:47:33.077Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="correo"]' }
+[0-0] 2020-09-19T22:47:33.089Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '455fd205-e296-4e51-bad7-293faf11d122'
+}
+[0-0] 2020-09-19T22:47:33.090Z INFO webdriver: COMMAND findElementFromElement("f732bb25-7740-4228-9bec-5d693df1a206", "css selector", "input[name="password"]")
+[0-0] 2020-09-19T22:47:33.091Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f732bb25-7740-4228-9bec-5d693df1a206/element
+[0-0] 2020-09-19T22:47:33.091Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="password"]' }
+[0-0] 2020-09-19T22:47:33.100Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'e2d8abe7-5f09-484b-9a62-c0849141cd55'
+}
+[0-0] 2020-09-19T22:47:33.102Z INFO webdriver: COMMAND findElementFromElement("f732bb25-7740-4228-9bec-5d693df1a206", "css selector", "input[name="acepta"]")
+[0-0] 2020-09-19T22:47:33.102Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f732bb25-7740-4228-9bec-5d693df1a206/element
+[0-0] 2020-09-19T22:47:33.102Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="acepta"]' }
+[0-0] 2020-09-19T22:47:33.113Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'c6a88cf3-1f99-4cfd-b193-e9c3655354b9'
+}
+[0-0] 2020-09-19T22:47:33.114Z INFO webdriver: COMMAND elementClear("fb8a23b1-b7d9-4ebd-9706-1c81d6cd0cda")
+[0-0] 2020-09-19T22:47:33.114Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/fb8a23b1-b7d9-4ebd-9706-1c81d6cd0cda/clear
+[0-0] 2020-09-19T22:47:33.150Z INFO webdriver: COMMAND elementSendKeys("fb8a23b1-b7d9-4ebd-9706-1c81d6cd0cda", "Jhonatan")
+[0-0] 2020-09-19T22:47:33.151Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/fb8a23b1-b7d9-4ebd-9706-1c81d6cd0cda/value
+[0-0] 2020-09-19T22:47:33.151Z INFO webdriver: DATA { text: 'Jhonatan' }
+[0-0] 2020-09-19T22:47:33.238Z INFO webdriver: COMMAND elementClear("08c3fa11-e301-43c3-95b2-d5c116751d32")
+[0-0] 2020-09-19T22:47:33.239Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/08c3fa11-e301-43c3-95b2-d5c116751d32/clear
+[0-0] 2020-09-19T22:47:33.266Z INFO webdriver: COMMAND elementSendKeys("08c3fa11-e301-43c3-95b2-d5c116751d32", "")
+[0-0] 2020-09-19T22:47:33.266Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/08c3fa11-e301-43c3-95b2-d5c116751d32/value
+[0-0] 2020-09-19T22:47:33.266Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:33.308Z INFO webdriver: COMMAND elementClear("455fd205-e296-4e51-bad7-293faf11d122")
+[0-0] 2020-09-19T22:47:33.308Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/455fd205-e296-4e51-bad7-293faf11d122/clear
+[0-0] 2020-09-19T22:47:33.336Z INFO webdriver: COMMAND elementSendKeys("455fd205-e296-4e51-bad7-293faf11d122", "j.guzmand@uniandes.edu.co")
+[0-0] 2020-09-19T22:47:33.337Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/455fd205-e296-4e51-bad7-293faf11d122/value
+[0-0] 2020-09-19T22:47:33.337Z INFO webdriver: DATA { text: 'j.guzmand@uniandes.edu.co' }
+[0-0] 2020-09-19T22:47:33.442Z INFO webdriver: COMMAND elementClear("e2d8abe7-5f09-484b-9a62-c0849141cd55")
+[0-0] 2020-09-19T22:47:33.443Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/e2d8abe7-5f09-484b-9a62-c0849141cd55/clear
+[0-0] 2020-09-19T22:47:33.468Z INFO webdriver: COMMAND elementSendKeys("e2d8abe7-5f09-484b-9a62-c0849141cd55", "")
+[0-0] 2020-09-19T22:47:33.468Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/e2d8abe7-5f09-484b-9a62-c0849141cd55/value
+[0-0] 2020-09-19T22:47:33.468Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:33.501Z INFO webdriver: COMMAND elementClick("c6a88cf3-1f99-4cfd-b193-e9c3655354b9")
+[0-0] 2020-09-19T22:47:33.505Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/c6a88cf3-1f99-4cfd-b193-e9c3655354b9/click
+[0-0] 2020-09-19T22:47:33.560Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Registrarse"]")
+[0-0] 2020-09-19T22:47:33.560Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:33.560Z INFO webdriver: DATA {
+  using: 'xpath',
+  value: './/button[normalize-space() = "Registrarse"]'
+}
+[0-0] 2020-09-19T22:47:33.567Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'eba2bf02-5fa1-40b4-8225-29c98fc6158f'
+}
+[0-0] 2020-09-19T22:47:33.570Z INFO webdriver: COMMAND elementClick("eba2bf02-5fa1-40b4-8225-29c98fc6158f")
+[0-0] 2020-09-19T22:47:33.571Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/eba2bf02-5fa1-40b4-8225-29c98fc6158f/click
+[0-0] 2020-09-19T22:47:33.600Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:33.600Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:33.601Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:33.615Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '47996274-810c-4ef4-8c7f-664a76b4a64a'
+}
+[0-0] 2020-09-19T22:47:33.618Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:33.618Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:33.618Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': '47996274-810c-4ef4-8c7f-664a76b4a64a',
+      ELEMENT: '47996274-810c-4ef4-8c7f-664a76b4a64a'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:33.629Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:33.629Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:33.629Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:33.629Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:33.637Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '47996274-810c-4ef4-8c7f-664a76b4a64a'
+}
+[0-0] 2020-09-19T22:47:33.638Z INFO webdriver: COMMAND getElementText("47996274-810c-4ef4-8c7f-664a76b4a64a")
+[0-0] 2020-09-19T22:47:33.639Z INFO webdriver: [GET] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/47996274-810c-4ef4-8c7f-664a76b4a64a/text
+[0-0] 2020-09-19T22:47:33.650Z INFO webdriver: RESULT Ingresa una contraseña
+[0-0] Ingresa una contraseña
+[0-0] 2020-09-19T22:47:33.654Z INFO webdriver: COMMAND navigateTo("https://losestudiantes.co/")
+[0-0] 2020-09-19T22:47:33.654Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/url
+2020-09-19T22:47:33.655Z INFO webdriver: DATA { url: 'https://losestudiantes.co/' }
+[0-0] 2020-09-19T22:47:33.996Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:33.996Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:33.996Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:34.007Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:34.009Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:34.009Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:34.009Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:34.016Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:34.018Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:34.018Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:34.018Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:34.025Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'cdce06a1-5e73-4c79-9caf-1bf2df093686'
+}
+[0-0] 2020-09-19T22:47:34.028Z INFO webdriver: COMMAND findElements("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:34.028Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/elements
+[0-0] 2020-09-19T22:47:34.029Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:34.035Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'cdce06a1-5e73-4c79-9caf-1bf2df093686'
+  }
+]
+[0-0] 2020-09-19T22:47:34.037Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:34.037Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:34.037Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:34.046Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'cdce06a1-5e73-4c79-9caf-1bf2df093686'
+}
+[0-0] 2020-09-19T22:47:34.047Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:34.047Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:34.048Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': 'cdce06a1-5e73-4c79-9caf-1bf2df093686',
+      ELEMENT: 'cdce06a1-5e73-4c79-9caf-1bf2df093686'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:34.056Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:34.057Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:34.057Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:34.057Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:34.064Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'cdce06a1-5e73-4c79-9caf-1bf2df093686'
+}
+[0-0] 2020-09-19T22:47:34.065Z INFO webdriver: COMMAND elementClick("cdce06a1-5e73-4c79-9caf-1bf2df093686")
+[0-0] 2020-09-19T22:47:34.065Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/cdce06a1-5e73-4c79-9caf-1bf2df093686/click
+[0-0] 2020-09-19T22:47:34.129Z INFO webdriver: COMMAND findElement("css selector", ".cajaSignUp")
+[0-0] 2020-09-19T22:47:34.129Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:34.129Z INFO webdriver: DATA { using: 'css selector', value: '.cajaSignUp' }
+[0-0] 2020-09-19T22:47:34.145Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'f640fce8-2eef-4e49-82e1-8f796946aa65'
+}
+[0-0] 2020-09-19T22:47:34.146Z INFO webdriver: COMMAND findElementFromElement("f640fce8-2eef-4e49-82e1-8f796946aa65", "css selector", "input[name="nombre"]")
+[0-0] 2020-09-19T22:47:34.146Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f640fce8-2eef-4e49-82e1-8f796946aa65/element
+[0-0] 2020-09-19T22:47:34.146Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="nombre"]' }
+[0-0] 2020-09-19T22:47:34.159Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'bf98bac9-66e8-4da9-9f57-1b1c5dd6eb49'
+}
+[0-0] 2020-09-19T22:47:34.160Z INFO webdriver: COMMAND findElementFromElement("f640fce8-2eef-4e49-82e1-8f796946aa65", "css selector", "input[name="apellido"]")
+[0-0] 2020-09-19T22:47:34.161Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f640fce8-2eef-4e49-82e1-8f796946aa65/element
+[0-0] 2020-09-19T22:47:34.161Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="apellido"]' }
+[0-0] 2020-09-19T22:47:34.174Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'cfde80af-925c-4530-aed2-5ba770601af6'
+}
+[0-0] 2020-09-19T22:47:34.176Z INFO webdriver: COMMAND findElementFromElement("f640fce8-2eef-4e49-82e1-8f796946aa65", "css selector", "input[name="correo"]")
+[0-0] 2020-09-19T22:47:34.176Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f640fce8-2eef-4e49-82e1-8f796946aa65/element
+[0-0] 2020-09-19T22:47:34.176Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="correo"]' }
+[0-0] 2020-09-19T22:47:34.186Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '64e12612-0cdb-40c5-87ce-52b5313fbfe7'
+}
+[0-0] 2020-09-19T22:47:34.187Z INFO webdriver: COMMAND findElementFromElement("f640fce8-2eef-4e49-82e1-8f796946aa65", "css selector", "input[name="password"]")
+[0-0] 2020-09-19T22:47:34.187Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f640fce8-2eef-4e49-82e1-8f796946aa65/element
+[0-0] 2020-09-19T22:47:34.187Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="password"]' }
+[0-0] 2020-09-19T22:47:34.198Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'a7cdcc4a-cc5b-4101-a42d-04afdb4b4457'
+}
+[0-0] 2020-09-19T22:47:34.199Z INFO webdriver: COMMAND findElementFromElement("f640fce8-2eef-4e49-82e1-8f796946aa65", "css selector", "input[name="acepta"]")
+[0-0] 2020-09-19T22:47:34.199Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/f640fce8-2eef-4e49-82e1-8f796946aa65/element
+[0-0] 2020-09-19T22:47:34.199Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="acepta"]' }
+[0-0] 2020-09-19T22:47:34.210Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b486a63d-d8a8-4134-a0b4-fbc8fc610b8a'
+}
+[0-0] 2020-09-19T22:47:34.211Z INFO webdriver: COMMAND elementClear("bf98bac9-66e8-4da9-9f57-1b1c5dd6eb49")
+[0-0] 2020-09-19T22:47:34.211Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/bf98bac9-66e8-4da9-9f57-1b1c5dd6eb49/clear
+[0-0] 2020-09-19T22:47:34.246Z INFO webdriver: COMMAND elementSendKeys("bf98bac9-66e8-4da9-9f57-1b1c5dd6eb49", "")
+[0-0] 2020-09-19T22:47:34.246Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/bf98bac9-66e8-4da9-9f57-1b1c5dd6eb49/value
+[0-0] 2020-09-19T22:47:34.246Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:34.285Z INFO webdriver: COMMAND elementClear("cfde80af-925c-4530-aed2-5ba770601af6")
+2020-09-19T22:47:34.285Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/cfde80af-925c-4530-aed2-5ba770601af6/clear
+[0-0] 2020-09-19T22:47:34.313Z INFO webdriver: COMMAND elementSendKeys("cfde80af-925c-4530-aed2-5ba770601af6", "Guzmán")
+[0-0] 2020-09-19T22:47:34.313Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/cfde80af-925c-4530-aed2-5ba770601af6/value
+[0-0] 2020-09-19T22:47:34.313Z INFO webdriver: DATA { text: 'Guzmán' }
+[0-0] 2020-09-19T22:47:34.381Z INFO webdriver: COMMAND elementClear("64e12612-0cdb-40c5-87ce-52b5313fbfe7")
+[0-0] 2020-09-19T22:47:34.381Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/64e12612-0cdb-40c5-87ce-52b5313fbfe7/clear
+[0-0] 2020-09-19T22:47:34.418Z INFO webdriver: COMMAND elementSendKeys("64e12612-0cdb-40c5-87ce-52b5313fbfe7", "j.guzmand@uniandes.edu.co")
+[0-0] 2020-09-19T22:47:34.419Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/64e12612-0cdb-40c5-87ce-52b5313fbfe7/value
+[0-0] 2020-09-19T22:47:34.419Z INFO webdriver: DATA { text: 'j.guzmand@uniandes.edu.co' }
+[0-0] 2020-09-19T22:47:34.526Z INFO webdriver: COMMAND elementClear("a7cdcc4a-cc5b-4101-a42d-04afdb4b4457")
+[0-0] 2020-09-19T22:47:34.526Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/a7cdcc4a-cc5b-4101-a42d-04afdb4b4457/clear
+[0-0] 2020-09-19T22:47:34.552Z INFO webdriver: COMMAND elementSendKeys("a7cdcc4a-cc5b-4101-a42d-04afdb4b4457", "")
+[0-0] 2020-09-19T22:47:34.552Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/a7cdcc4a-cc5b-4101-a42d-04afdb4b4457/value
+[0-0] 2020-09-19T22:47:34.552Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:34.592Z INFO webdriver: COMMAND elementClick("b486a63d-d8a8-4134-a0b4-fbc8fc610b8a")
+[0-0] 2020-09-19T22:47:34.592Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/b486a63d-d8a8-4134-a0b4-fbc8fc610b8a/click
+[0-0] 2020-09-19T22:47:34.630Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Registrarse"]")
+[0-0] 2020-09-19T22:47:34.630Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:34.630Z INFO webdriver: DATA {
+  using: 'xpath',
+  value: './/button[normalize-space() = "Registrarse"]'
+}
+[0-0] 2020-09-19T22:47:34.638Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '8fa786f5-4c40-4503-97cd-09371b43be75'
+}
+[0-0] 2020-09-19T22:47:34.639Z INFO webdriver: COMMAND elementClick("8fa786f5-4c40-4503-97cd-09371b43be75")
+[0-0] 2020-09-19T22:47:34.640Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/8fa786f5-4c40-4503-97cd-09371b43be75/click
+[0-0] 2020-09-19T22:47:34.667Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:34.668Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:34.668Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:34.676Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '1d702384-4a6b-4bff-bc7b-7d7045824f11'
+}
+[0-0] 2020-09-19T22:47:34.677Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:34.677Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:34.677Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': '1d702384-4a6b-4bff-bc7b-7d7045824f11',
+      ELEMENT: '1d702384-4a6b-4bff-bc7b-7d7045824f11'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:34.682Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:34.683Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:34.683Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:34.683Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:34.691Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '1d702384-4a6b-4bff-bc7b-7d7045824f11'
+}
+[0-0] 2020-09-19T22:47:34.691Z INFO webdriver: COMMAND getElementText("1d702384-4a6b-4bff-bc7b-7d7045824f11")
+[0-0] 2020-09-19T22:47:34.692Z INFO webdriver: [GET] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/1d702384-4a6b-4bff-bc7b-7d7045824f11/text
+[0-0] 2020-09-19T22:47:34.702Z INFO webdriver: RESULT Ingresa una contraseña
+[0-0] Ingresa una contraseña
+[0-0] 2020-09-19T22:47:34.705Z INFO webdriver: COMMAND navigateTo("https://losestudiantes.co/")
+2020-09-19T22:47:34.705Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/url
+2020-09-19T22:47:34.706Z INFO webdriver: DATA { url: 'https://losestudiantes.co/' }
+[0-0] 2020-09-19T22:47:35.076Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:35.076Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:35.076Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:35.083Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:35.084Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+2020-09-19T22:47:35.085Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:35.085Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:35.094Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:35.096Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:35.096Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:35.096Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:35.103Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '894fbbe8-e5ae-49df-9f32-7a139125bd82'
+}
+[0-0] 2020-09-19T22:47:35.104Z INFO webdriver: COMMAND findElements("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:35.105Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/elements
+[0-0] 2020-09-19T22:47:35.105Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:35.111Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '894fbbe8-e5ae-49df-9f32-7a139125bd82'
+  }
+]
+[0-0] 2020-09-19T22:47:35.112Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:35.112Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:35.112Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:35.118Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '894fbbe8-e5ae-49df-9f32-7a139125bd82'
+}
+[0-0] 2020-09-19T22:47:35.120Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:35.120Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+2020-09-19T22:47:35.120Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': '894fbbe8-e5ae-49df-9f32-7a139125bd82',
+      ELEMENT: '894fbbe8-e5ae-49df-9f32-7a139125bd82'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:35.133Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:35.134Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+2020-09-19T22:47:35.134Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:35.134Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:35.144Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '894fbbe8-e5ae-49df-9f32-7a139125bd82'
+}
+[0-0] 2020-09-19T22:47:35.146Z INFO webdriver: COMMAND elementClick("894fbbe8-e5ae-49df-9f32-7a139125bd82")
+[0-0] 2020-09-19T22:47:35.146Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/894fbbe8-e5ae-49df-9f32-7a139125bd82/click
+[0-0] 2020-09-19T22:47:35.217Z INFO webdriver: COMMAND findElement("css selector", ".cajaSignUp")
+[0-0] 2020-09-19T22:47:35.217Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:35.217Z INFO webdriver: DATA { using: 'css selector', value: '.cajaSignUp' }
+[0-0] 2020-09-19T22:47:35.234Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6d07088d-cf06-409a-9f45-2d2ff49380f3'
+}
+[0-0] 2020-09-19T22:47:35.236Z INFO webdriver: COMMAND findElementFromElement("6d07088d-cf06-409a-9f45-2d2ff49380f3", "css selector", "input[name="nombre"]")
+[0-0] 2020-09-19T22:47:35.237Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6d07088d-cf06-409a-9f45-2d2ff49380f3/element
+[0-0] 2020-09-19T22:47:35.237Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="nombre"]' }
+[0-0] 2020-09-19T22:47:35.249Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '89352ea7-0be7-4c50-ba60-7f3b670a419b'
+}
+[0-0] 2020-09-19T22:47:35.250Z INFO webdriver: COMMAND findElementFromElement("6d07088d-cf06-409a-9f45-2d2ff49380f3", "css selector", "input[name="apellido"]")
+[0-0] 2020-09-19T22:47:35.250Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6d07088d-cf06-409a-9f45-2d2ff49380f3/element
+[0-0] 2020-09-19T22:47:35.250Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="apellido"]' }
+[0-0] 2020-09-19T22:47:35.264Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '3e236849-a014-4c36-9487-615771f14928'
+}
+[0-0] 2020-09-19T22:47:35.266Z INFO webdriver: COMMAND findElementFromElement("6d07088d-cf06-409a-9f45-2d2ff49380f3", "css selector", "input[name="correo"]")
+[0-0] 2020-09-19T22:47:35.266Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6d07088d-cf06-409a-9f45-2d2ff49380f3/element
+[0-0] 2020-09-19T22:47:35.266Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="correo"]' }
+[0-0] 2020-09-19T22:47:35.280Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '85886d3e-b6fa-478a-8e2b-811e77131a62'
+}
+[0-0] 2020-09-19T22:47:35.281Z INFO webdriver: COMMAND findElementFromElement("6d07088d-cf06-409a-9f45-2d2ff49380f3", "css selector", "input[name="password"]")
+[0-0] 2020-09-19T22:47:35.281Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6d07088d-cf06-409a-9f45-2d2ff49380f3/element
+[0-0] 2020-09-19T22:47:35.281Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="password"]' }
+[0-0] 2020-09-19T22:47:35.296Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '25e502d2-5565-4932-a6d7-bd0091494c47'
+}
+[0-0] 2020-09-19T22:47:35.297Z INFO webdriver: COMMAND findElementFromElement("6d07088d-cf06-409a-9f45-2d2ff49380f3", "css selector", "input[name="acepta"]")
+[0-0] 2020-09-19T22:47:35.298Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6d07088d-cf06-409a-9f45-2d2ff49380f3/element
+[0-0] 2020-09-19T22:47:35.298Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="acepta"]' }
+[0-0] 2020-09-19T22:47:35.317Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '075c5e7c-0b6b-491c-adde-5f84d27ead5f'
+}
+[0-0] 2020-09-19T22:47:35.319Z INFO webdriver: COMMAND elementClear("89352ea7-0be7-4c50-ba60-7f3b670a419b")
+[0-0] 2020-09-19T22:47:35.319Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/89352ea7-0be7-4c50-ba60-7f3b670a419b/clear
+[0-0] 2020-09-19T22:47:35.358Z INFO webdriver: COMMAND elementSendKeys("89352ea7-0be7-4c50-ba60-7f3b670a419b", "")
+2020-09-19T22:47:35.358Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/89352ea7-0be7-4c50-ba60-7f3b670a419b/value
+[0-0] 2020-09-19T22:47:35.358Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:35.408Z INFO webdriver: COMMAND elementClear("3e236849-a014-4c36-9487-615771f14928")
+[0-0] 2020-09-19T22:47:35.408Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/3e236849-a014-4c36-9487-615771f14928/clear
+[0-0] 2020-09-19T22:47:35.434Z INFO webdriver: COMMAND elementSendKeys("3e236849-a014-4c36-9487-615771f14928", "")
+[0-0] 2020-09-19T22:47:35.434Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/3e236849-a014-4c36-9487-615771f14928/value
+[0-0] 2020-09-19T22:47:35.434Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:35.481Z INFO webdriver: COMMAND elementClear("85886d3e-b6fa-478a-8e2b-811e77131a62")
+[0-0] 2020-09-19T22:47:35.481Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/85886d3e-b6fa-478a-8e2b-811e77131a62/clear
+[0-0] 2020-09-19T22:47:35.513Z INFO webdriver: COMMAND elementSendKeys("85886d3e-b6fa-478a-8e2b-811e77131a62", "j.guzmand@uniandes.edu.co")
+[0-0] 2020-09-19T22:47:35.513Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/85886d3e-b6fa-478a-8e2b-811e77131a62/value
+[0-0] 2020-09-19T22:47:35.513Z INFO webdriver: DATA { text: 'j.guzmand@uniandes.edu.co' }
+[0-0] 2020-09-19T22:47:35.648Z INFO webdriver: COMMAND elementClear("25e502d2-5565-4932-a6d7-bd0091494c47")
+[0-0] 2020-09-19T22:47:35.649Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/25e502d2-5565-4932-a6d7-bd0091494c47/clear
+[0-0] 2020-09-19T22:47:35.676Z INFO webdriver: COMMAND elementSendKeys("25e502d2-5565-4932-a6d7-bd0091494c47", "")
+[0-0] 2020-09-19T22:47:35.676Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/25e502d2-5565-4932-a6d7-bd0091494c47/value
+[0-0] 2020-09-19T22:47:35.677Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:35.717Z INFO webdriver: COMMAND elementClick("075c5e7c-0b6b-491c-adde-5f84d27ead5f")
+[0-0] 2020-09-19T22:47:35.717Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/075c5e7c-0b6b-491c-adde-5f84d27ead5f/click
+[0-0] 2020-09-19T22:47:35.758Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Registrarse"]")
+[0-0] 2020-09-19T22:47:35.758Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:35.758Z INFO webdriver: DATA {
+  using: 'xpath',
+  value: './/button[normalize-space() = "Registrarse"]'
+}
+[0-0] 2020-09-19T22:47:35.765Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'fafb806e-56ac-4ece-ae23-b9e2343c1208'
+}
+[0-0] 2020-09-19T22:47:35.766Z INFO webdriver: COMMAND elementClick("fafb806e-56ac-4ece-ae23-b9e2343c1208")
+[0-0] 2020-09-19T22:47:35.766Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/fafb806e-56ac-4ece-ae23-b9e2343c1208/click
+[0-0] 2020-09-19T22:47:35.800Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:35.800Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:35.800Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:35.814Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'cd8c3884-df03-4068-924b-f3e7bc546bdb'
+}
+[0-0] 2020-09-19T22:47:35.815Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:35.815Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:35.815Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': 'cd8c3884-df03-4068-924b-f3e7bc546bdb',
+      ELEMENT: 'cd8c3884-df03-4068-924b-f3e7bc546bdb'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:35.826Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:35.826Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:35.826Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:35.826Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:35.833Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'cd8c3884-df03-4068-924b-f3e7bc546bdb'
+}
+[0-0] 2020-09-19T22:47:35.834Z INFO webdriver: COMMAND getElementText("cd8c3884-df03-4068-924b-f3e7bc546bdb")
+[0-0] 2020-09-19T22:47:35.836Z INFO webdriver: [GET] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/cd8c3884-df03-4068-924b-f3e7bc546bdb/text
+[0-0] 2020-09-19T22:47:35.849Z INFO webdriver: RESULT Ingresa una contraseña
+[0-0] Ingresa una contraseña
+[0-0] 2020-09-19T22:47:35.851Z INFO webdriver: COMMAND navigateTo("https://losestudiantes.co/")
+[0-0] 2020-09-19T22:47:35.851Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/url
+[0-0] 2020-09-19T22:47:35.851Z INFO webdriver: DATA { url: 'https://losestudiantes.co/' }
+[0-0] 2020-09-19T22:47:36.180Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:36.180Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:36.180Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:36.190Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:36.191Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:36.192Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:36.192Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:36.199Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:36.200Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:36.200Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:36.200Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:36.210Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'ebc3f049-7b0c-4d6d-924c-c0dceaeae4df'
+}
+[0-0] 2020-09-19T22:47:36.211Z INFO webdriver: COMMAND findElements("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:36.211Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/elements
+[0-0] 2020-09-19T22:47:36.211Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:36.221Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'ebc3f049-7b0c-4d6d-924c-c0dceaeae4df'
+  }
+]
+[0-0] 2020-09-19T22:47:36.223Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:36.223Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:36.223Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:36.230Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'ebc3f049-7b0c-4d6d-924c-c0dceaeae4df'
+}
+[0-0] 2020-09-19T22:47:36.231Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:36.231Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:36.231Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': 'ebc3f049-7b0c-4d6d-924c-c0dceaeae4df',
+      ELEMENT: 'ebc3f049-7b0c-4d6d-924c-c0dceaeae4df'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:36.241Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:36.241Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:36.242Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:36.242Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:36.249Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'ebc3f049-7b0c-4d6d-924c-c0dceaeae4df'
+}
+[0-0] 2020-09-19T22:47:36.250Z INFO webdriver: COMMAND elementClick("ebc3f049-7b0c-4d6d-924c-c0dceaeae4df")
+[0-0] 2020-09-19T22:47:36.250Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/ebc3f049-7b0c-4d6d-924c-c0dceaeae4df/click
+[0-0] 2020-09-19T22:47:36.319Z INFO webdriver: COMMAND findElement("css selector", ".cajaSignUp")
+[0-0] 2020-09-19T22:47:36.319Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:36.319Z INFO webdriver: DATA { using: 'css selector', value: '.cajaSignUp' }
+[0-0] 2020-09-19T22:47:36.330Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '2d0a621a-eed0-4eca-ae19-cebd03bbbcb0'
+}
+[0-0] 2020-09-19T22:47:36.330Z INFO webdriver: COMMAND findElementFromElement("2d0a621a-eed0-4eca-ae19-cebd03bbbcb0", "css selector", "input[name="nombre"]")
+[0-0] 2020-09-19T22:47:36.331Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/2d0a621a-eed0-4eca-ae19-cebd03bbbcb0/element
+[0-0] 2020-09-19T22:47:36.331Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="nombre"]' }
+[0-0] 2020-09-19T22:47:36.346Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '277fa246-218e-474f-bc20-36e171c3759d'
+}
+[0-0] 2020-09-19T22:47:36.348Z INFO webdriver: COMMAND findElementFromElement("2d0a621a-eed0-4eca-ae19-cebd03bbbcb0", "css selector", "input[name="apellido"]")
+[0-0] 2020-09-19T22:47:36.348Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/2d0a621a-eed0-4eca-ae19-cebd03bbbcb0/element
+[0-0] 2020-09-19T22:47:36.348Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="apellido"]' }
+[0-0] 2020-09-19T22:47:36.361Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'ce2e476a-d1bb-4c47-a39d-2bdc136158c7'
+}
+[0-0] 2020-09-19T22:47:36.362Z INFO webdriver: COMMAND findElementFromElement("2d0a621a-eed0-4eca-ae19-cebd03bbbcb0", "css selector", "input[name="correo"]")
+[0-0] 2020-09-19T22:47:36.362Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/2d0a621a-eed0-4eca-ae19-cebd03bbbcb0/element
+[0-0] 2020-09-19T22:47:36.362Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="correo"]' }
+[0-0] 2020-09-19T22:47:36.373Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'afe1078f-26ba-49da-92d1-cb16eb710909'
+}
+[0-0] 2020-09-19T22:47:36.374Z INFO webdriver: COMMAND findElementFromElement("2d0a621a-eed0-4eca-ae19-cebd03bbbcb0", "css selector", "input[name="password"]")
+[0-0] 2020-09-19T22:47:36.374Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/2d0a621a-eed0-4eca-ae19-cebd03bbbcb0/element
+[0-0] 2020-09-19T22:47:36.375Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="password"]' }
+[0-0] 2020-09-19T22:47:36.384Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '08a896f7-008f-432b-8830-6270f743934b'
+}
+[0-0] 2020-09-19T22:47:36.384Z INFO webdriver: COMMAND findElementFromElement("2d0a621a-eed0-4eca-ae19-cebd03bbbcb0", "css selector", "input[name="acepta"]")
+[0-0] 2020-09-19T22:47:36.385Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/2d0a621a-eed0-4eca-ae19-cebd03bbbcb0/element
+[0-0] 2020-09-19T22:47:36.385Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="acepta"]' }
+[0-0] 2020-09-19T22:47:36.396Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'bdc5df2f-b2f7-4134-b3bc-674be1c68853'
+}
+[0-0] 2020-09-19T22:47:36.397Z INFO webdriver: COMMAND elementClear("277fa246-218e-474f-bc20-36e171c3759d")
+[0-0] 2020-09-19T22:47:36.397Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/277fa246-218e-474f-bc20-36e171c3759d/clear
+[0-0] 2020-09-19T22:47:36.432Z INFO webdriver: COMMAND elementSendKeys("277fa246-218e-474f-bc20-36e171c3759d", "")
+[0-0] 2020-09-19T22:47:36.432Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/277fa246-218e-474f-bc20-36e171c3759d/value
+[0-0] 2020-09-19T22:47:36.433Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:36.481Z INFO webdriver: COMMAND elementClear("ce2e476a-d1bb-4c47-a39d-2bdc136158c7")
+[0-0] 2020-09-19T22:47:36.481Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/ce2e476a-d1bb-4c47-a39d-2bdc136158c7/clear
+[0-0] 2020-09-19T22:47:36.511Z INFO webdriver: COMMAND elementSendKeys("ce2e476a-d1bb-4c47-a39d-2bdc136158c7", "")
+[0-0] 2020-09-19T22:47:36.512Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/ce2e476a-d1bb-4c47-a39d-2bdc136158c7/value
+[0-0] 2020-09-19T22:47:36.512Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:36.549Z INFO webdriver: COMMAND elementClear("afe1078f-26ba-49da-92d1-cb16eb710909")
+[0-0] 2020-09-19T22:47:36.549Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/afe1078f-26ba-49da-92d1-cb16eb710909/clear
+[0-0] 2020-09-19T22:47:36.580Z INFO webdriver: COMMAND elementSendKeys("afe1078f-26ba-49da-92d1-cb16eb710909", "j.guzmand@uniandes.edu.co")
+[0-0] 2020-09-19T22:47:36.580Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/afe1078f-26ba-49da-92d1-cb16eb710909/value
+[0-0] 2020-09-19T22:47:36.580Z INFO webdriver: DATA { text: 'j.guzmand@uniandes.edu.co' }
+[0-0] 2020-09-19T22:47:36.709Z INFO webdriver: COMMAND elementClear("08a896f7-008f-432b-8830-6270f743934b")
+[0-0] 2020-09-19T22:47:36.709Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/08a896f7-008f-432b-8830-6270f743934b/clear
+[0-0] 2020-09-19T22:47:36.733Z INFO webdriver: COMMAND elementSendKeys("08a896f7-008f-432b-8830-6270f743934b", "asdf")
+[0-0] 2020-09-19T22:47:36.733Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/08a896f7-008f-432b-8830-6270f743934b/value
+[0-0] 2020-09-19T22:47:36.733Z INFO webdriver: DATA { text: 'asdf' }
+[0-0] 2020-09-19T22:47:36.784Z INFO webdriver: COMMAND elementClick("bdc5df2f-b2f7-4134-b3bc-674be1c68853")
+[0-0] 2020-09-19T22:47:36.784Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/bdc5df2f-b2f7-4134-b3bc-674be1c68853/click
+[0-0] 2020-09-19T22:47:36.825Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Registrarse"]")
+[0-0] 2020-09-19T22:47:36.825Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:36.825Z INFO webdriver: DATA {
+  using: 'xpath',
+  value: './/button[normalize-space() = "Registrarse"]'
+}
+[0-0] 2020-09-19T22:47:36.832Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'be360aac-d938-4921-8f4f-ccf051026128'
+}
+[0-0] 2020-09-19T22:47:36.833Z INFO webdriver: COMMAND elementClick("be360aac-d938-4921-8f4f-ccf051026128")
+[0-0] 2020-09-19T22:47:36.833Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/be360aac-d938-4921-8f4f-ccf051026128/click
+[0-0] 2020-09-19T22:47:36.863Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:36.863Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:36.863Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:36.873Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '7680ceb8-0ce8-4db0-b520-c4a4a50cc70e'
+}
+[0-0] 2020-09-19T22:47:36.874Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:36.875Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:36.875Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': '7680ceb8-0ce8-4db0-b520-c4a4a50cc70e',
+      ELEMENT: '7680ceb8-0ce8-4db0-b520-c4a4a50cc70e'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:36.880Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:36.880Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:36.881Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:36.881Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:36.891Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '7680ceb8-0ce8-4db0-b520-c4a4a50cc70e'
+}
+[0-0] 2020-09-19T22:47:36.893Z INFO webdriver: COMMAND getElementText("7680ceb8-0ce8-4db0-b520-c4a4a50cc70e")
+[0-0] 2020-09-19T22:47:36.893Z INFO webdriver: [GET] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/7680ceb8-0ce8-4db0-b520-c4a4a50cc70e/text
+[0-0] 2020-09-19T22:47:36.908Z INFO webdriver: RESULT La contraseña debe ser al menos de 8 caracteres
+[0-0] La contraseña debe ser al menos de 8 caracteres
+[0-0] 2020-09-19T22:47:36.910Z INFO webdriver: COMMAND navigateTo("https://losestudiantes.co/")
+[0-0] 2020-09-19T22:47:36.910Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/url
+[0-0] 2020-09-19T22:47:36.910Z INFO webdriver: DATA { url: 'https://losestudiantes.co/' }
+[0-0] 2020-09-19T22:47:37.260Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:37.260Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:37.260Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:37.267Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:37.268Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Cerrar"]")
+[0-0] 2020-09-19T22:47:37.268Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:37.268Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Cerrar"]' }
+[0-0] 2020-09-19T22:47:37.278Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'no such element: Unable to locate element: {"method":"xpath","selector":".//button[normalize-space() = "Cerrar"]"}\n' +
+    '  (Session info: chrome=85.0.4183.102)',
+  stacktrace: 'Backtrace:\n' +
+    '\tOrdinal0 [0x0089D383+3134339]\n' +
+    '\tOrdinal0 [0x0078A171+2007409]\n' +
+    '\tOrdinal0 [0x0062AEE8+569064]\n' +
+    '\tOrdinal0 [0x005BA72F+108335]\n' +
+    '\tOrdinal0 [0x005D9DB0+236976]\n' +
+    '\tOrdinal0 [0x005CEC90+191632]\n' +
+    '\tOrdinal0 [0x005D8773+231283]\n' +
+    '\tOrdinal0 [0x005CEB0B+191243]\n' +
+    '\tOrdinal0 [0x005B2E77+77431]\n' +
+    '\tOrdinal0 [0x005B3E3E+81470]\n' +
+    '\tOrdinal0 [0x005B3DC9+81353]\n' +
+    '\tOrdinal0 [0x007A0CD9+2100441]\n' +
+    '\tGetHandleVerifier [0x00A0B75A+1396954]\n' +
+    '\tGetHandleVerifier [0x00A0B3D9+1396057]\n' +
+    '\tGetHandleVerifier [0x00A17126+1444518]\n' +
+    '\tGetHandleVerifier [0x00A0BCE8+1398376]\n' +
+    '\tOrdinal0 [0x00797F51+2064209]\n' +
+    '\tOrdinal0 [0x007A22EB+2106091]\n' +
+    '\tOrdinal0 [0x007A2411+2106385]\n' +
+    '\tOrdinal0 [0x007B49C4+2181572]\n' +
+    '\tBaseThreadInitThunk [0x76D56359+25]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07C24+228]\n' +
+    '\tRtlGetAppContainerNamedObjectPath [0x77C07BF4+180]\n'
+}
+[0-0] 2020-09-19T22:47:37.279Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:37.279Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:37.279Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:37.287Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6a9f4e4d-3976-4568-a97f-eb887167bd81'
+}
+[0-0] 2020-09-19T22:47:37.288Z INFO webdriver: COMMAND findElements("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:37.288Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/elements
+[0-0] 2020-09-19T22:47:37.288Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:37.294Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '6a9f4e4d-3976-4568-a97f-eb887167bd81'
+  }
+]
+[0-0] 2020-09-19T22:47:37.295Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:37.295Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:37.295Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:37.301Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6a9f4e4d-3976-4568-a97f-eb887167bd81'
+}
+[0-0] 2020-09-19T22:47:37.303Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:37.303Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:37.303Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': '6a9f4e4d-3976-4568-a97f-eb887167bd81',
+      ELEMENT: '6a9f4e4d-3976-4568-a97f-eb887167bd81'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:37.309Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:37.310Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Ingresar"]")
+[0-0] 2020-09-19T22:47:37.310Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:37.310Z INFO webdriver: DATA { using: 'xpath', value: './/button[normalize-space() = "Ingresar"]' }
+[0-0] 2020-09-19T22:47:37.315Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6a9f4e4d-3976-4568-a97f-eb887167bd81'
+}
+[0-0] 2020-09-19T22:47:37.316Z INFO webdriver: COMMAND elementClick("6a9f4e4d-3976-4568-a97f-eb887167bd81")
+[0-0] 2020-09-19T22:47:37.316Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6a9f4e4d-3976-4568-a97f-eb887167bd81/click
+[0-0] 2020-09-19T22:47:37.384Z INFO webdriver: COMMAND findElement("css selector", ".cajaSignUp")
+2020-09-19T22:47:37.385Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+2020-09-19T22:47:37.385Z INFO webdriver: DATA { using: 'css selector', value: '.cajaSignUp' }
+[0-0] 2020-09-19T22:47:37.399Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '4bc84276-4d42-4234-b052-d50488b707a9'
+}
+[0-0] 2020-09-19T22:47:37.400Z INFO webdriver: COMMAND findElementFromElement("4bc84276-4d42-4234-b052-d50488b707a9", "css selector", "input[name="nombre"]")
+[0-0] 2020-09-19T22:47:37.401Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/4bc84276-4d42-4234-b052-d50488b707a9/element
+[0-0] 2020-09-19T22:47:37.401Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="nombre"]' }
+[0-0] 2020-09-19T22:47:37.418Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '58cde584-8a14-4b42-85f7-cac0dac05468'
+}
+[0-0] 2020-09-19T22:47:37.422Z INFO webdriver: COMMAND findElementFromElement("4bc84276-4d42-4234-b052-d50488b707a9", "css selector", "input[name="apellido"]")
+[0-0] 2020-09-19T22:47:37.422Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/4bc84276-4d42-4234-b052-d50488b707a9/element
+[0-0] 2020-09-19T22:47:37.422Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="apellido"]' }
+[0-0] 2020-09-19T22:47:37.432Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'ba6f5d9d-ef21-41a7-8979-08a8305c9741'
+}
+[0-0] 2020-09-19T22:47:37.433Z INFO webdriver: COMMAND findElementFromElement("4bc84276-4d42-4234-b052-d50488b707a9", "css selector", "input[name="correo"]")
+[0-0] 2020-09-19T22:47:37.433Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/4bc84276-4d42-4234-b052-d50488b707a9/element
+[0-0] 2020-09-19T22:47:37.433Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="correo"]' }
+[0-0] 2020-09-19T22:47:37.446Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6b0cb8f8-d7af-428a-8b10-a9e8e110e3fc'
+}
+[0-0] 2020-09-19T22:47:37.447Z INFO webdriver: COMMAND findElementFromElement("4bc84276-4d42-4234-b052-d50488b707a9", "css selector", "input[name="password"]")
+[0-0] 2020-09-19T22:47:37.447Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/4bc84276-4d42-4234-b052-d50488b707a9/element
+[0-0] 2020-09-19T22:47:37.448Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="password"]' }
+[0-0] 2020-09-19T22:47:37.461Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'a48e60fb-92dc-428b-b84e-7b0c0a1b4a0e'
+}
+[0-0] 2020-09-19T22:47:37.462Z INFO webdriver: COMMAND findElementFromElement("4bc84276-4d42-4234-b052-d50488b707a9", "css selector", "input[name="acepta"]")
+[0-0] 2020-09-19T22:47:37.462Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/4bc84276-4d42-4234-b052-d50488b707a9/element
+[0-0] 2020-09-19T22:47:37.462Z INFO webdriver: DATA { using: 'css selector', value: 'input[name="acepta"]' }
+[0-0] 2020-09-19T22:47:37.475Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '7ff0ac16-440e-40b5-a277-780707af3fed'
+}
+[0-0] 2020-09-19T22:47:37.476Z INFO webdriver: COMMAND elementClear("58cde584-8a14-4b42-85f7-cac0dac05468")
+[0-0] 2020-09-19T22:47:37.476Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/58cde584-8a14-4b42-85f7-cac0dac05468/clear
+[0-0] 2020-09-19T22:47:37.514Z INFO webdriver: COMMAND elementSendKeys("58cde584-8a14-4b42-85f7-cac0dac05468", "Jhonatan")
+[0-0] 2020-09-19T22:47:37.514Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/58cde584-8a14-4b42-85f7-cac0dac05468/value
+[0-0] 2020-09-19T22:47:37.514Z INFO webdriver: DATA { text: 'Jhonatan' }
+[0-0] 2020-09-19T22:47:37.597Z INFO webdriver: COMMAND elementClear("ba6f5d9d-ef21-41a7-8979-08a8305c9741")
+[0-0] 2020-09-19T22:47:37.597Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/ba6f5d9d-ef21-41a7-8979-08a8305c9741/clear
+[0-0] 2020-09-19T22:47:37.627Z INFO webdriver: COMMAND elementSendKeys("ba6f5d9d-ef21-41a7-8979-08a8305c9741", "")
+[0-0] 2020-09-19T22:47:37.628Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/ba6f5d9d-ef21-41a7-8979-08a8305c9741/value
+2020-09-19T22:47:37.628Z INFO webdriver: DATA { text: '' }
+[0-0] 2020-09-19T22:47:37.666Z INFO webdriver: COMMAND elementClear("6b0cb8f8-d7af-428a-8b10-a9e8e110e3fc")
+[0-0] 2020-09-19T22:47:37.666Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6b0cb8f8-d7af-428a-8b10-a9e8e110e3fc/clear
+[0-0] 2020-09-19T22:47:37.697Z INFO webdriver: COMMAND elementSendKeys("6b0cb8f8-d7af-428a-8b10-a9e8e110e3fc", "asdf@asdf")
+[0-0] 2020-09-19T22:47:37.698Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/6b0cb8f8-d7af-428a-8b10-a9e8e110e3fc/value
+[0-0] 2020-09-19T22:47:37.698Z INFO webdriver: DATA { text: 'asdf@asdf' }
+[0-0] 2020-09-19T22:47:37.761Z INFO webdriver: COMMAND elementClear("a48e60fb-92dc-428b-b84e-7b0c0a1b4a0e")
+[0-0] 2020-09-19T22:47:37.761Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/a48e60fb-92dc-428b-b84e-7b0c0a1b4a0e/clear
+[0-0] 2020-09-19T22:47:37.791Z INFO webdriver: COMMAND elementSendKeys("a48e60fb-92dc-428b-b84e-7b0c0a1b4a0e", "asdfasdf")
+[0-0] 2020-09-19T22:47:37.791Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/a48e60fb-92dc-428b-b84e-7b0c0a1b4a0e/value
+[0-0] 2020-09-19T22:47:37.791Z INFO webdriver: DATA { text: 'asdfasdf' }
+[0-0] 2020-09-19T22:47:37.850Z INFO webdriver: COMMAND elementClick("7ff0ac16-440e-40b5-a277-780707af3fed")
+[0-0] 2020-09-19T22:47:37.850Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/7ff0ac16-440e-40b5-a277-780707af3fed/click
+[0-0] 2020-09-19T22:47:37.896Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space() = "Registrarse"]")
+[0-0] 2020-09-19T22:47:37.896Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:37.896Z INFO webdriver: DATA {
+  using: 'xpath',
+  value: './/button[normalize-space() = "Registrarse"]'
+}
+[0-0] 2020-09-19T22:47:37.904Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '0ad87083-0527-485f-a021-f5f1a6d9435f'
+}
+[0-0] 2020-09-19T22:47:37.906Z INFO webdriver: COMMAND elementClick("0ad87083-0527-485f-a021-f5f1a6d9435f")
+[0-0] 2020-09-19T22:47:37.906Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/0ad87083-0527-485f-a021-f5f1a6d9435f/click
+[0-0] 2020-09-19T22:47:37.941Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:37.941Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:37.941Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:37.947Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '2f80ef02-4eb0-46e3-bd09-f00e50a749d0'
+}
+[0-0] 2020-09-19T22:47:37.948Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2020-09-19T22:47:37.948Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/execute/sync
+[0-0] 2020-09-19T22:47:37.948Z INFO webdriver: DATA {
+  script: 'return (function isElementDisplayed(element) {\n' +
+    '  function nodeIsElement(node) {\n' +
+    '    if (!node) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    switch (node.nodeType) {\n' +
+    '      case Node.ELEMENT_NODE:\n' +
+    '      case Node.DOCUMENT_NODE:\n' +
+    '      case Node.DOCUMENT_FRAGMENT_NODE:\n' +
+    '        return true;\n' +
+    '\n' +
+    '      default:\n' +
+    '        return false;\n' +
+    '    }\n' +
+    '  }\n' +
+    '\n' +
+    '  function parentElementForElement(element) {\n' +
+    '    if (!element) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    return enclosingNodeOrSelfMatchingPredicate(element.parentNode, nodeIsElement);\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingNodeOrSelfMatchingPredicate(targetNode, predicate) {\n' +
+    '    for (let node = targetNode; node && node !== targetNode.ownerDocument; node = node.parentNode) if (predicate(node)) {\n' +
+    '      return node;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function enclosingElementOrSelfMatchingPredicate(targetElement, predicate) {\n' +
+    '    for (let element = targetElement; element && element !== targetElement.ownerDocument; element = parentElementForElement(element)) if (predicate(element)) {\n' +
+    '      return element;\n' +
+    '    }\n' +
+    '\n' +
+    '    return null;\n' +
+    '  }\n' +
+    '\n' +
+    '  function cascadedStylePropertyForElement(element, property) {\n' +
+    '    if (!element || !property) {\n' +
+    '      return null;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element instanceof DocumentFragment) {\n' +
+    '      element = element.host;\n' +
+    '    }\n' +
+    '\n' +
+    '    let computedStyle = window.getComputedStyle(element);\n' +
+    '    let computedStyleProperty = computedStyle.getPropertyValue(property);\n' +
+    '\n' +
+    "    if (computedStyleProperty && computedStyleProperty !== 'inherit') {\n" +
+    '      return computedStyleProperty;\n' +
+    '    }\n' +
+    '\n' +
+    '    let parentElement = parentElementForElement(element);\n' +
+    '    return cascadedStylePropertyForElement(parentElement, property);\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementSubtreeHasNonZeroDimensions(element) {\n' +
+    '    let boundingBox = element.getBoundingClientRect();\n' +
+    '\n' +
+    '    if (boundingBox.width > 0 && boundingBox.height > 0) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    "    if (element.tagName.toUpperCase() === 'PATH' && boundingBox.width + boundingBox.height > 0) {\n" +
+    "      let strokeWidth = cascadedStylePropertyForElement(element, 'stroke-width');\n" +
+    '      return !!strokeWidth && parseInt(strokeWidth, 10) > 0;\n' +
+    '    }\n' +
+    '\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow === 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).some(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (nodeIsElement(childNode)) {\n' +
+    '        return elementSubtreeHasNonZeroDimensions(childNode);\n' +
+    '      }\n' +
+    '\n' +
+    '      return false;\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function elementOverflowsContainer(element) {\n' +
+    "    let cascadedOverflow = cascadedStylePropertyForElement(element, 'overflow');\n" +
+    '\n' +
+    "    if (cascadedOverflow !== 'hidden') {\n" +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return true;\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementSubtreeHiddenByOverflow(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!elementOverflowsContainer(element)) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (!element.childNodes.length) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    return Array.from(element.childNodes).every(childNode => {\n' +
+    '      if (childNode.nodeType === Node.TEXT_NODE) {\n' +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!nodeIsElement(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      if (!elementSubtreeHasNonZeroDimensions(childNode)) {\n' +
+    '        return true;\n' +
+    '      }\n' +
+    '\n' +
+    '      return isElementSubtreeHiddenByOverflow(childNode);\n' +
+    '    });\n' +
+    '  }\n' +
+    '\n' +
+    '  function isElementInsideShadowRoot(element) {\n' +
+    '    if (!element) {\n' +
+    '      return false;\n' +
+    '    }\n' +
+    '\n' +
+    '    if (element.parentNode && element.parentNode.host) {\n' +
+    '      return true;\n' +
+    '    }\n' +
+    '\n' +
+    '    return isElementInsideShadowRoot(element.parentNode);\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!isElementInsideShadowRoot(element) && !document.contains(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  switch (element.tagName.toUpperCase()) {\n' +
+    "    case 'BODY':\n" +
+    '      return true;\n' +
+    '\n' +
+    "    case 'SCRIPT':\n" +
+    "    case 'NOSCRIPT':\n" +
+    '      return false;\n' +
+    '\n' +
+    "    case 'OPTGROUP':\n" +
+    "    case 'OPTION':\n" +
+    '      {\n' +
+    "        let enclosingSelectElement = enclosingNodeOrSelfMatchingPredicate(element, e => e.tagName.toUpperCase() === 'SELECT');\n" +
+    '        return isElementDisplayed(enclosingSelectElement);\n' +
+    '      }\n' +
+    '\n' +
+    "    case 'INPUT':\n" +
+    "      if (element.type === 'hidden') {\n" +
+    '        return false;\n' +
+    '      }\n' +
+    '\n' +
+    '      break;\n' +
+    '\n' +
+    '    default:\n' +
+    '      break;\n' +
+    '  }\n' +
+    '\n' +
+    "  if (cascadedStylePropertyForElement(element, 'visibility') !== 'visible') {\n" +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  let hasAncestorWithZeroOpacity = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return Number(cascadedStylePropertyForElement(e, 'opacity')) === 0;\n" +
+    '  });\n' +
+    '  let hasAncestorWithDisplayNone = !!enclosingElementOrSelfMatchingPredicate(element, e => {\n' +
+    "    return cascadedStylePropertyForElement(e, 'display') === 'none';\n" +
+    '  });\n' +
+    '\n' +
+    '  if (hasAncestorWithZeroOpacity || hasAncestorWithDisplayNone) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (!elementSubtreeHasNonZeroDimensions(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  if (isElementSubtreeHiddenByOverflow(element)) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '\n' +
+    '  return true;\n' +
+    '}).apply(null, arguments)',
+  args: [
+    {
+      'element-6066-11e4-a52e-4f735466cecf': '2f80ef02-4eb0-46e3-bd09-f00e50a749d0',
+      ELEMENT: '2f80ef02-4eb0-46e3-bd09-f00e50a749d0'
+    }
+  ]
+}
+[0-0] 2020-09-19T22:47:37.962Z INFO webdriver: RESULT true
+[0-0] 2020-09-19T22:47:37.962Z INFO webdriver: COMMAND findElement("css selector", ".aviso.alert.alert-danger")
+[0-0] 2020-09-19T22:47:37.962Z INFO webdriver: [POST] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element
+[0-0] 2020-09-19T22:47:37.962Z INFO webdriver: DATA { using: 'css selector', value: '.aviso.alert.alert-danger' }
+[0-0] 2020-09-19T22:47:37.968Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '2f80ef02-4eb0-46e3-bd09-f00e50a749d0'
+}
+[0-0] 2020-09-19T22:47:37.969Z INFO webdriver: COMMAND getElementText("2f80ef02-4eb0-46e3-bd09-f00e50a749d0")
+[0-0] 2020-09-19T22:47:37.969Z INFO webdriver: [GET] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46/element/2f80ef02-4eb0-46e3-bd09-f00e50a749d0/text
+[0-0] 2020-09-19T22:47:37.980Z INFO webdriver: RESULT Ingresa un correo valido
+[0-0] Ingresa un correo valido
+[0-0] 2020-09-19T22:47:37.982Z INFO webdriver: COMMAND deleteSession()
+[0-0] 2020-09-19T22:47:37.982Z INFO webdriver: [DELETE] http://127.0.0.1:4444/wd/hub/session/02025b2c41dd1923e62dddeca46f1f46
+[0-0] FAILED in chrome - C:\Users\docto\Desktop\cucumber-webdriverio\features\registro.feature
+2020-09-19T22:47:38.183Z INFO @wdio/cli:launcher: Run onComplete hook
+2020-09-19T22:47:38.183Z INFO @wdio/selenium-standalone-service: shutting down all browsers
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[chrome 85.0.4183.102 windows #0-0] Spec: C:\Users\docto\Desktop\cucumber-webdriverio\features\registro.feature
+[chrome 85.0.4183.102 windows #0-0] Running: chrome (v85.0.4183.102) on windows
+[chrome 85.0.4183.102 windows #0-0] Session ID: 02025b2c41dd1923e62dddeca46f1f46
+[chrome 85.0.4183.102 windows #0-0]
+[chrome 85.0.4183.102 windows #0-0] Register into losestudiantes.co
+[chrome 85.0.4183.102 windows #0-0]     Good register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Given I go to losestudiantes home screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ When I open the login screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I fill a good register with asdf, asdfasd, asdf@asdf1.com, Universidad de los Andes, Arte and asdfasdf
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I try to register
+[chrome 85.0.4183.102 windows #0-0]        ✖ Then I expect to see a successful message Registro exitoso!
+[chrome 85.0.4183.102 windows #0-0]
+[chrome 85.0.4183.102 windows #0-0]     Wrong register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Given I go to losestudiantes home screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ When I open the login screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I fill register with Jhonatan, , j.guzmand@uniandes.edu.co, Universidad de los Andes,  and
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I try to register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Then I expect to see register "Ingresa una contraseña"
+[chrome 85.0.4183.102 windows #0-0]
+[chrome 85.0.4183.102 windows #0-0]     Wrong register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Given I go to losestudiantes home screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ When I open the login screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I fill register with , Guzmán, j.guzmand@uniandes.edu.co, Universidad de los Andes,  and
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I try to register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Then I expect to see register "Ingresa una contraseña"
+[chrome 85.0.4183.102 windows #0-0]
+[chrome 85.0.4183.102 windows #0-0]     Wrong register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Given I go to losestudiantes home screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ When I open the login screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I fill register with , , j.guzmand@uniandes.edu.co, Universidad de los Andes,  and
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I try to register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Then I expect to see register "Ingresa una contraseña"
+[chrome 85.0.4183.102 windows #0-0]
+[chrome 85.0.4183.102 windows #0-0]     Wrong register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Given I go to losestudiantes home screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ When I open the login screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I fill register with , , j.guzmand@uniandes.edu.co, ,  and asdf
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I try to register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Then I expect to see register "La contraseña debe ser al menos de 8 caracteres"
+[chrome 85.0.4183.102 windows #0-0]
+[chrome 85.0.4183.102 windows #0-0]     Wrong register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Given I go to losestudiantes home screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ When I open the login screen
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I fill register with Jhonatan, , asdf@asdf, ,  and asdfasdf
+[chrome 85.0.4183.102 windows #0-0]        ✓ And I try to register
+[chrome 85.0.4183.102 windows #0-0]        ✓ Then I expect to see register "Ingresa un correo valido"
+[chrome 85.0.4183.102 windows #0-0]
+[chrome 85.0.4183.102 windows #0-0] 29 passing (9.9s)
+[chrome 85.0.4183.102 windows #0-0] 1 failing
+[chrome 85.0.4183.102 windows #0-0]
+[chrome 85.0.4183.102 windows #0-0] 1) Good register Then I expect to see a successful message Registro exitoso!
+[chrome 85.0.4183.102 windows #0-0] Step "Then I expect to see a successful message Registro exitoso!" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.
+[chrome 85.0.4183.102 windows #0-0] undefined:undefined
+
+
+Spec Files:	 0 passed, 1 failed, 1 total (100% completed) in 00:00:16 
+
+2020-09-19T22:47:38.185Z INFO @wdio/local-runner: Shutting down spawned worker
+2020-09-19T22:47:38.436Z INFO @wdio/local-runner: Waiting for 0 to shut down gracefully
+2020-09-19T22:47:38.436Z INFO @wdio/local-runner: shutting down
